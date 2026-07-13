@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../../assets/graphics/logo.png">
+    <title>EXIRE | The Project Portal</title>
+    <script src="../../web/js/nav.js" defer></script>
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav id="main-nav">
+        <a href="index.html" onclick="toggleMenu()">Overview</a>
+        <a href="pages/characters.html" onclick="toggleMenu()">Characters</a>
+        <a href="pages/seasons.html" onclick="toggleMenu()">Seasons</a>
+        <a href="pages/backstage.html" onclick="toggleMenu()">Backstage</a>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <h1>EXIRE</h1>
+            <p>One world is not enough. Two worlds are too many.</p>
+        </div>
+
+        <div class="portal-grid">
+            <a href="pages/characters.html" class="portal-card">
+                <h2 class="portal-h2">Characters</h2>
+                <p>Meet the teenagers caught between parallel worlds.</p>
+            </a>
+            <a href="pages/seasons.html" class="portal-card">
+                <h2 class="portal-h2">Seasons</h2>
+                <p>Follow the journey through drama and unexpected plot twists.</p>
+            </a>
+            <a href="pages/backstage.html" class="portal-card">
+                <h2 class="portal-h2">Backstage</h2>
+                <p>Explore the production, concept art, and technical details.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span>production by <a href="../../web/index.html" class="footer-link"><strong>PIDEONWASH</strong></a></span>
+            <div class="footer-socials">
+                <a href="https://discord.com/invite/SKhXXkaKRu" title="Discord"><img src="../../assets/graphics/Discord-Symbol-White.svg" alt="Discord"></a>
+                <a href="https://www.instagram.com/pideonwash" title="Instagram"><img src="../../assets/graphics/Instagram_Glyph_White.svg" alt="Instagram"></a>
+                <a href="https://www.youtube.com/channel/UCzaymovCDcb4Y8rIS-CwUwg" title="YouTube"><img src="../../assets/graphics/yt_icon_white_digital.png" alt="YouTube"></a>
+            </div>
+            <span class="footer-copyright">&copy; 2026 Series Archive</span>
+        </div>
+    </footer>
+</body>
+</html>
