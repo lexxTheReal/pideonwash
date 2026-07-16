@@ -55,23 +55,16 @@
     border: 2px solid var(--glass-border);
 }
 
-
-.member-photo span {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--neon-purple);
-    opacity: 0.5;
-}
-
 .member-name {
     font-size: 1.4rem;
     margin-bottom: 5px;
     color: #fff;
     z-index: 3;
+    font-family: var(--font-title);
 }
 
 .member-role {
-    font-family: var(--font-body);
+    font-family: var(--font-mono);
     font-size: 0.9rem;
     color: var(--neon-pink);
     margin-bottom: 10px;

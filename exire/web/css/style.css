@@ -13,7 +13,7 @@
     --font-mono: 'Special Elite', monospace;
     --rad-lg: 24px;
     --rad-md: 16px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.125s ease-in;
 }
 
 * {
@@ -231,16 +231,17 @@ main {
     content: '';
     position: absolute;
     left: 50%;
-    width: 2px;
+    width: 1px;
     height: 100%;
-    background: var(--neon-purple);
+    background: linear-gradient(to bottom, var(--primary-purple), rgba(0, 0, 0, 0.201));
     transform: translateX(-50%);
+    filter: blur(2px);
 }
 
 .timeline-item {
     margin-bottom: 60px;
     width: 50%;
-    position: relative;
+    position: relative; 
 }
 
 .timeline-item:nth-child(odd) {
@@ -252,6 +253,33 @@ main {
     left: 50%;
     text-align: left;
 }
+.timeline-item:nth-child(1){
+    filter: blur(5px);
+}
+.timeline-item:nth-child(2){
+    filter: blur(10px);
+}
+.timeline-item:nth-child(3){
+    filter: blur(15px);
+}
+.timeline-item:nth-child(4){
+    filter: blur(20px);
+}
+.timeline-item:nth-child(5){
+    filter: blur(25px);
+}
+.timeline-item:nth-child(6){
+    filter: blur(30px);
+}
+.timeline-item:nth-child(7){
+    filter: blur(35px);
+}
+.timeline-item:nth-child(8){
+    filter: blur(40px);
+}
+.timeline-item:nth-child(9){
+    filter: blur(45px);
+}
 
 .timeline-content {
     background: var(--glass-white);
@@ -262,7 +290,8 @@ main {
 }
 
 .timeline-content:hover {
-    border-color: var(--neon-purple);
+    /*border-color: var(--neon-purple); ENABLE WHEN RELEASED*/ 
+    cursor: not-allowed;
 }
 
 .timeline-date {
@@ -293,6 +322,7 @@ main {
     transition: var(--transition);
     cursor: pointer;
     overflow: hidden;
+    filter: blur(5px);
 }
 
 .vault-item:hover {
