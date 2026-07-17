@@ -364,6 +364,7 @@ footer strong {
     color: #fff;
     cursor: pointer;
     transition: var(--transition);
+    text-decoration: underline;
 }
 
 footer strong:hover {
