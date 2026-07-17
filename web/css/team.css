@@ -1,4 +1,4 @@
-/* Team Page Custom Styles */
+/* Team Page Custom Styles - Fixed Version */
 .team-grid {
     margin-top: 50px;
     max-width: 100%;
@@ -8,43 +8,74 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    z-index: 0;
 }
 
 .team-grid > .items {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
     text-align: center;
     width: 100%;
-    min-height: fit-content;
-    height: 500px;
+    min-height: 500px;
+    height: auto;
     box-shadow: 0 0 100px 1px var(--bg-accent);
     border-radius: var(--rad-lg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    overflow: hidden;
 }
-.team-grid > :nth-child(even) {
+
+.team-grid > :nth-child(odd) {
     direction: rtl;
 }
 
-.team-grid > .items > .left{
+.team-grid > :nth-child(odd) > * {
+    direction: ltr;
+}
+
+.team-grid > :nth-child(odd) > .tagContainer {
+    left: 15px;
+    right: auto;
+}
+
+.team-grid > .items > .left {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    gap: 20px;
+    padding: 20px;
 }
 
-.team-grid img {
+.team-grid .img {
     width: 50%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.finn {
+    background: url(../../assets/graphics/teamPics/linus.webp) 70% / cover no-repeat;
+}
+
+.alex {
+    background: url(../../assets/graphics/teamPics/alex.webp) 80% / cover no-repeat;
+}
+
+.tagContainer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 10;
 }
 
 .tag {
-    position: absolute;
-    left: 15px;
-    top: 15px;
     width: fit-content;
     height: auto;
     min-height: fit-content;
@@ -52,28 +83,100 @@
     display: flex;
     justify-content: center;
     padding: 10px 16.67px 5px 16.67px; /*HALTS MAUL NUTTE ES GEHT NED BESSA*/
-    border: 2px solid var(--neon-purple);
+    border: 2px solid;
     border-radius: var(--rad-md);
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 0 100px 1px var(--bg-accent);
+    box-shadow: 0 0 10px 1px var(--bg-accent);
     font-family: var(--font-mono);
-}
-.tag:hover {
-    background-color: var(--glass-border);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
 }
 
-span {
+.tag:hover {
+    background-color: var(--glass-border);
+    color: white;
+}
+
+.ceo { border-color: #ffee00c4; box-shadow: 0 0 5px 1px #ffee00c4, inset 0 0 5px 1px #ffee00c4; }
+.web { border-color: #2200ffc4; box-shadow: 0 0 5px 1px #2200ffc4, inset 0 0 5px 1px #2200ffc4; }
+.actor { border-color: #ff6600c4; box-shadow: 0 0 5px 1px #ff6600c4, inset 0 0 5px 1px #ff6600c4; }
+.writer { border-color: #00eeffc4; box-shadow: 0 0 5px 1px #00eeffc4, inset 0 0 5px 1px #00eeffc4; }
+.social { border-color: #ff0077c4; box-shadow: 0 0 5px 1px #ff0077c4, inset 0 0 5px 1px #ff0077c4; }
+.camera { border-color: #73ff00c4; box-shadow: 0 0 5px 1px #73ff00c4, inset 0 0 5px 1px #73ff00c4; }
+
+.team-grid span {
     text-align: justify;
-    line-height: 200%;
     font-weight: 600;
-    padding: 0 50px;
+    line-height: 1.8;
+    padding: 0 30px;
 }
 
 .items > .left > h1 {
+    hyphens: none !important;
     white-space: normal !important;
-    overflow-wrap: break-word !important;
-    word-break: break-word !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
     line-height: 0.9;
     letter-spacing: 3px;
+    margin: 0;
+    font-size: clamp(2.5rem, 10vw, 5rem);
+
+}
+
+@media (max-width: 855px) {
+    .team-grid {
+        gap: 30px;
+    }
+
+    .team-grid > .items {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        min-height: 600px;
+        padding-bottom: 80px;
+    }
+
+    .team-grid > :nth-child(odd) {
+        direction: ltr;
+    }
+
+    .team-grid .img {
+        width: 60%;
+        margin-top: 40px;
+    }
+
+    .tagContainer,
+    .team-grid > :nth-child(odd) > .tagContainer {
+        top: auto;
+        left: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        justify-content: center;
+        width: 90%;
+    }
+
+    .team-grid span {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 20px;
+        font-weight: normal;
+        line-height: 1.3;
+    }
+
+    .items > .left > h1 {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid .img {
+        width: 70%;
+    }
+    
+    .team-grid span {
+        padding: 0 15px;
+    }
 }

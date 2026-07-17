@@ -108,6 +108,25 @@ nav a:hover {
     color: var(--neon-pink);
 }
 
+nav#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-dark);
+    backdrop-filter: blur(20px);
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 footer {
     width: 100%;
     padding: 40px 0;
@@ -363,25 +382,6 @@ main h1 {
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
-    }
-    
-    nav#main-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: var(--bg-dark);
-        backdrop-filter: blur(20px);
-        border: none;
-        border-radius: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transform: translateY(-100%);
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     nav#main-nav.active {
