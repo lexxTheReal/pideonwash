@@ -1,112 +1,79 @@
 /* Team Page Custom Styles */
-
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px 20px;
-    width: 100%;
-    max-width: 1200px;
     margin-top: 50px;
-}
-
-.team-member {
+    max-width: 100%;
+    width: 1200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.member-photo-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
 
-.member-blob {
-    position: absolute;
+.team-grid > .items {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    place-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: fit-content;
+    height: 500px;
+    box-shadow: 0 0 100px 1px var(--bg-accent);
+    border-radius: var(--rad-lg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+.team-grid > :nth-child(even) {
+    direction: rtl;
+}
+
+.team-grid > .items > .left{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background: var(--neon-purple);
-    filter: blur(20px);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    z-index: 1;
-    transition: var(--transition);
-    opacity: 0.6;
 }
 
-.member-photo {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    background-image: url('../assets/graphics/placeholder.webp');
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    z-index: 2;
+.team-grid img {
+    width: 50%;
+}
+
+.tag {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: fit-content;
+    height: auto;
+    min-height: fit-content;
+    background-color: var(--glass-white);
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border: 2px solid var(--glass-border);
-}
-
-.member-name {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    color: #fff;
-    z-index: 3;
-    font-family: var(--font-title);
-}
-
-.member-role {
+    padding: 10px 16.67px 5px 16.67px; /*HALTS MAUL NUTTE ES GEHT NED BESSA*/
+    border: 2px solid var(--neon-purple);
+    border-radius: var(--rad-md);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 0 100px 1px var(--bg-accent);
     font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--neon-pink);
-    margin-bottom: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+}
+.tag:hover {
+    background-color: var(--glass-border);
 }
 
-.member-bio {
-    font-size: 0.85rem;
-    opacity: 0.6;
-    line-height: 1.4;
-    max-width: 220px;
+span {
+    text-align: justify;
+    line-height: 200%;
+    font-weight: 600;
+    padding: 0 50px;
 }
 
-.team-member:hover .member-blob {
-    transform: scale(1.1);
-    opacity: 0.8;
-    background: var(--neon-pink);
-}
-
-.team-member:hover .member-photo {
-    transform: scale(1.05);
-    border-color: var(--neon-pink);
-}
-
-@media (max-width: 1024px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-    .member-photo-container {
-        width: 150px;
-        height: 150px;
-    }
-    .member-photo {
-        width: 130px;
-        height: 130px;
-    }
+.items > .left > h1 {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    line-height: 0.9;
+    letter-spacing: 3px;
 }
