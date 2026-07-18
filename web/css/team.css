@@ -22,8 +22,8 @@
     height: auto;
     box-shadow: 0 0 100px 1px var(--bg-accent);
     border-radius: var(--rad-lg);
-    overflow: hidden;
 }
+
 
 .team-grid > :nth-child(odd) {
     direction: rtl;
@@ -47,6 +47,8 @@
     height: 100%;
     gap: 20px;
     padding: 20px;
+    position: relative !important;
+    grid-row: 1;
 }
 
 .team-grid .img {
@@ -55,15 +57,11 @@
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
 }
 
-.finn {
-    background: url(../../assets/graphics/teamPics/linus.webp) 70% / cover no-repeat;
-}
-
-.alex {
-    background: url(../../assets/graphics/teamPics/alex.webp) 80% / cover no-repeat;
-}
+.finn {background: url(../../assets/graphics/teamPics/linus.webp) 70% / cover no-repeat;}
+.alex {background: url(../../assets/graphics/teamPics/alex.webp) 80% / cover no-repeat;}
 
 .tagContainer {
     position: absolute;
@@ -110,6 +108,7 @@
     font-weight: 600;
     line-height: 1.8;
     padding: 0 30px;
+    grid-row: 1;
 }
 
 .items > .left > h1 {
@@ -121,8 +120,38 @@
     letter-spacing: 3px;
     margin: 0;
     font-size: clamp(2.5rem, 10vw, 5rem);
-
 }
+
+.left > .socials {
+    width: fit-content;
+    height: auto;
+    padding: 10px;
+    border-radius: 9999px;
+    border: 2px solid var(--glass-border);
+    background-color: var(--glass-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    opacity: 0;
+    transform: translateX(-50%) translateY(200%);
+    transition: var(--transition);
+    z-index: 3;
+}
+.left > .socials > img {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+}
+
+.items:hover > .left >.socials {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 
 @media (max-width: 855px) {
     .team-grid {
@@ -164,11 +193,16 @@
         margin-bottom: 20px;
         font-weight: normal;
         line-height: 1.3;
+        grid-row: 2;
     }
 
     .items > .left > h1 {
         font-size: clamp(2.5rem, 10vw, 5rem);
     }
+    .items:hover > .left >.socials {
+        transform: translateX(-50%) translateY(-10%);
+    }
+
 }
 
 @media (max-width: 480px) {
