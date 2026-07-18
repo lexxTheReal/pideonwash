@@ -144,6 +144,7 @@
     z-index: 3;
     backdrop-filter: blur(15px);
 }
+.left > .socials * {transition: var(--transition);}
 .left > .socials > img {
     width: 40px;
     aspect-ratio: 1 / 1;
@@ -152,6 +153,12 @@
 .items:hover > .left >.socials {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+.left > .socials:has(img:hover) {
+    background-color: var(--glass-border);
+}
+.left > .socials > img:hover {
+    scale: 1.1;
 }
 
 
