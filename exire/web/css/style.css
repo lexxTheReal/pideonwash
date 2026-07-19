@@ -402,6 +402,24 @@ main {
     background: url(../../../assets/graphics/ort.png) center / cover no-repeat;
 }
 
+@media (max-width: 935px) {
+    .stats {
+        height: auto;
+
+    }
+    .stats > .content {
+        flex-direction: column;
+        padding: 7.5vw 0;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 100%;
+        gap: 40px;
+    }
+    .stats > .content > .item {
+        width: 80%;
+    }
+}
+
 /* FOOTER */
 
 #goHome {
