@@ -329,6 +329,79 @@ main {
 .vault-item.wide { grid-column: span 2; }
 .vault-item.tall { grid-row: span 2; }
 
+.stats {
+    width: 100%;
+    max-width: 1200px;
+    height: 300px;
+    
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: var(--rad-lg) var(--rad-lg) 0 0;
+    background: linear-gradient(to top, transparent, var(--deep-purple));
+    transition: var(--transition);
+}
+.stats * {transition: var(--transition);}
+.stats:hover {
+    box-shadow: 0 0 50px 1px var(--deep-purple);
+}
+.stats > h2 {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--deep-purple);
+    border-radius: var(--rad-md) var(--rad-md) 0 0;
+    padding-left: 25px;
+    border-bottom: 2px solid var(--glass-border);
+}
+.stats > .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+.stats > .content > .item {
+    width: auto;
+    height: 80%;
+    aspect-ratio: 4 / 3;
+    background: var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+    border-radius: var(--rad-md);
+    gap: 10px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 15px 15px var(--glass-white);
+    text-decoration: none;
+}
+.stats > .content > .item:hover {scale: 1.05;box-shadow: none;}
+.stats > .content > .item > div {
+    height: 50%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.stats > .content > .item > span {
+    font-family: var(--font-mono);
+    color: var(--neon-purple);
+    font-weight: 700;
+}
+.people {
+    background: url(../../../assets/graphics/silhouette-mehrerer-benutzer.png) center / cover no-repeat;
+}
+.episodes {
+    background: url(../../../assets/graphics/movie-player.png) center / cover no-repeat;
+}
+.location {
+    background: url(../../../assets/graphics/ort.png) center / cover no-repeat;
+}
+
 /* FOOTER */
 
 #goHome {
@@ -367,6 +440,11 @@ footer {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: #666;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .footer-container {
