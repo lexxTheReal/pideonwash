@@ -1,0 +1,24 @@
+└── PIDEONWASH
+    └── assets
+    └── web
+        └── 01_script
+            ├── nav.js
+        └── 02_css
+            ├── style.css
+        └── exire
+            └── css
+                ├── backstage.css
+                ├── characters.css
+                ├── seasons.css
+            └── pages
+                ├── backstage.html
+                ├── characters.html
+                ├── seasons.html
+            ├── index.html
+        └── main
+            ├── team.css
+            ├── team.html
+    ├── .gitignore
+    ├── details.pdf
+    ├── index.html
+    └── README.md
