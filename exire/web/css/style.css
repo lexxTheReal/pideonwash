@@ -343,6 +343,9 @@ main {
 }
 
 @media (max-width: 600px) {
+    .dossier-grid {
+        gap: 35vh;
+    }
     .card {
         width: 90vw;
     }
