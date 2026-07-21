@@ -6,6 +6,7 @@
     --deep-purple: #1a004d;
     --neon-purple: #811DF1;
     --neon-pink: #FF56FF;
+    --classified-red: #8B0000;
     --glass-white: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.15);
     --glass-glow: rgba(129, 221, 241, 0.2);
@@ -55,7 +56,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    background: var(--bg-dark);
+    background: radial-gradient(circle at center, var(--primary-purple), var(--bg-dark));   
+    background-attachment: fixed;
 }
 html {
     scroll-behavior: smooth;
@@ -154,6 +156,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    justify-content: center;
 }
 
 .footer-socials {
@@ -208,40 +211,6 @@ footer strong:hover {
     background: white;
     transition: var(--transition);
     border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-    .burger-menu {
-        display: flex;
-    }
-    
-    nav#main-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: var(--bg-dark);
-        backdrop-filter: blur(20px);
-        border: none;
-        border-radius: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transform: translateY(-100%);
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    nav#main-nav.active {
-        transform: translateY(0);
-    }
-
-    nav#main-nav a {
-        font-size: 2rem;
-        text-align: center;
-    }
 }
 
 .full-screen-hero {
@@ -420,7 +389,6 @@ main h1 {
     padding: 30px;
 }
 
-
 .glass-card {
     background: var(--glass-white);
     backdrop-filter: blur(10px);
@@ -434,6 +402,66 @@ main h1 {
     border-color: var(--neon-pink);
     background: rgba(255, 255, 255, 0.08);
 }
+
+/* Portal Styles */
+.hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, #fff, var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.portal-card {
+    background: var(--glass-white);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--rad-lg);
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+}
+
+.portal-card:hover {
+    border-color: var(--neon-pink);
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.portal-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.portal-card p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
 @media (min-width: 769px) {
     .bento-main:hover {
         grid-column: span 2;
@@ -511,5 +539,27 @@ main h1 {
     }
     .bento-main-h2 {
         font-size: 2rem;
+    }
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        width: calc(100% - 50px);
+        left: 50px !important;
+        text-align: left !important;
+    }
+
+    .vault-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+    }
+
+    .vault-item.wide,
+    .vault-item.tall {
+        grid-column: auto;
+        grid-row: auto;
     }
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/backstage.css">
+    <link rel="stylesheet" href="../../02_css/style.css">
+    <link rel="icon" href="../../../assets/logo.png">
+    <script src="../../01_script/nav.js" defer></script>
+    <title>EXIRE | The Vault</title>
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav id="main-nav">
+        <a href="../index.html" onclick="toggleMenu()">Overview</a>
+        <a href="characters.html" onclick="toggleMenu()">Characters</a>
+        <a href="seasons.html" onclick="toggleMenu()">Seasons</a>
+        <a href="backstage.html" onclick="toggleMenu()">Backstage</a>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <h1 class="text-gradient">The Vault</h1>
+            <p>Artifacts from a world that shouldn't exist.</p>
+        </div>
+
+        <div class="vault-grid">
+            <div class="vault-item wide"></div>
+            <div class="vault-item tall"></div>
+            <div class="vault-item"></div>
+            <div class="vault-item tall"></div>
+            <div class="vault-item wide"></div>
+            <div class="vault-item tall"></div>
+            <div class="vault-item wide"></div>
+        </div>
+    </main>
+
+    <div id="goHome" title="return to Homepage" onclick="window.location.href='../../../index.html'">
+        <img src="../../../assets/logo.png" alt="logo">
+    </div>
+
+    <footer>
+        <span>production by <a href="../../../index.html" class="footer-link"><strong>PIDEONWASH</strong></a></span>
+        <div class="footer-socials">
+            <a href="https://discord.com/invite/SKhXXkaKRu" title="Discord"><img src="../../../assets/Discord-Symbol-White.svg" alt="Discord"></a>
+            <a href="https://www.instagram.com/pideonwash" title="Instagram"><img src="../../../assets/Instagram_Glyph_White.svg" alt="Instagram"></a>
+            <a href="https://www.youtube.com/channel/UCzaymovCDcb4Y8rIS-CwUwg" title="YouTube"><img src="../../../assets/yt_icon_white_digital.png" alt="YouTube"></a>
+        </div>
+        <span class="footer-copyright">&copy; 2026 Series Archive</span>
+    </footer>
+</body>
+</html>
