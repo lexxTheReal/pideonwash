@@ -220,13 +220,13 @@
     font-weight: 700;
 }
 .people {
-    background: url(../../../assets/person-3-fill-svgrepo-com.svg) center / cover no-repeat;
+    background: url(../../assets/person-3-fill-svgrepo-com.svg) center / cover no-repeat;
 }
 .episodes {
-    background: url(../../../assets/movie-svgrepo-com.svg) center / cover no-repeat;
+    background: url(../../assets/movie-svgrepo-com.svg) center / cover no-repeat;
 }
 .location {
-    background: url(../../../assets/place-ui-pin-svgrepo-com.svg) center / 80% no-repeat;
+    background: url(../../assets/place-ui-pin-svgrepo-com.svg) center / 80% no-repeat;
 }
 
 @media (max-width: 935px) {
