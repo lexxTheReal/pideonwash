@@ -273,6 +273,7 @@ main {
     padding: 2cqw;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .lower > .details {
