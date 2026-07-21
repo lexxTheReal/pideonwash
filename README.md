@@ -1,7 +1,5 @@
 # PIDEONWASH | Digital Production Studio
 
-![GitHub Pages Status](https://github.com/PIDEONWASH/PIDEONWASH/actions/workflows/static.yml/badge.svg)
-
 ## Was es tut
 
 PIDEONWASH ist ein digitales Produktionsstudio, das sich auf die Entwicklung und Präsentation der Originalserie **EXIRE** konzentriert. Diese Website dient als zentrales Portal und Archiv für die Serie, bietet Einblicke in die Charaktere, Staffeln und die Produktion hinter den Kulissen. Sie fungiert als interaktive Plattform, um die Welt von EXIRE zu erkunden und die kreative Arbeit des PIDEONWASH-Teams zu präsentieren.
