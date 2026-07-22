@@ -62,8 +62,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(rgba(255, 255, 163, 0.404) 75%, rgba(255, 255, 166, 0.76)), 
-                url(../../../assets/50.jpg);
+    background: radial-gradient(rgba(255, 255, 163, 0.404) 75%, rgba(255, 255, 166, 0.76)), url(../../../assets/paper-background.jpg) center / cover no-repeat;
     color: #000;
     border-radius: var(--rad-lg);
     aspect-ratio: 1 / 1.414;
@@ -151,7 +150,7 @@
     width: 30%;
     height: fit-content;
     aspect-ratio: 3 / 4;
-    background: url(../../../assets/file-19c5a57bf848aacbeafb83eaedac0a12.png) center / cover no-repeat;
+    background: url(../../../assets/character-portrait.png) center / cover no-repeat;
     position: relative;
     margin-left: auto;
     top: 3cqw;
