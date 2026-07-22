@@ -111,6 +111,7 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    text-align: left;
 }
 
 .lower > .details {
@@ -125,6 +126,7 @@
     font-size: clamp(1.2rem, 5cqw, 2rem);
     text-decoration: underline 3px black;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .lower > .details > .container {
@@ -152,8 +154,8 @@
     background: url(../../../assets/file-19c5a57bf848aacbeafb83eaedac0a12.png) center / cover no-repeat;
     position: relative;
     margin-left: auto;
-    top: 1cqw;
-    right: 1cqw;
+    top: 3cqw;
+    right: 3cqw;
 }
 
 .lower > .img > .classified {
@@ -172,10 +174,10 @@
     text-align: center;
 }
 
-.dossier-grid > div:nth-of-type(1):focus + .card:nth-of-type(2), .card:nth-of-type(2):hover,
-.dossier-grid > div:nth-of-type(3):focus + .card:nth-of-type(4), .card:nth-of-type(4):hover,
-.dossier-grid > div:nth-of-type(5):focus + .card:nth-of-type(6), .card:nth-of-type(6):hover,
-.dossier-grid > div:nth-of-type(7):focus + .card:nth-of-type(8), .card:nth-of-type(8):hover {
+.dossier-grid > div:nth-of-type(1):focus + .card:nth-of-type(2), .card:nth-of-type(2):hover, .card:nth-of-type(2):focus,
+.dossier-grid > div:nth-of-type(3):focus + .card:nth-of-type(4), .card:nth-of-type(4):hover, .card:nth-of-type(4):focus,
+.dossier-grid > div:nth-of-type(5):focus + .card:nth-of-type(6), .card:nth-of-type(6):hover, .card:nth-of-type(6):focus,
+.dossier-grid > div:nth-of-type(7):focus + .card:nth-of-type(8), .card:nth-of-type(8):hover, .card:nth-of-type(8):focus{
     opacity: 1; 
     z-index: 99;
 }
@@ -197,19 +199,33 @@
         width: 100%;
         height: auto;
         padding-bottom: 20px;
+        /*TEMPORÄRER FIX*/
+        padding-left: 0;
+    }
+    /*TEMPORÄRER FIX*/
+    .details > h2 {
+        text-align: center !important;
     }
 
     .lower > .img {
+        /*
         width: 60%;
         margin: 0 auto;
         order: -1;
         margin-bottom: 20px;
         top: auto;
-        right: auto;
+        right: auto;*/
+        /*TEMPORÄRER FIX*/
+        display: none;
+        width: 0;
+        height: 0;
     }
     
     .lower > .details > .container {
         gap: 20px;
+        /*TEMPORÄRER FIX*/
+        justify-content: center;
+        gap: 20%;
     }
 }
 
