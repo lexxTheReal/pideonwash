@@ -187,7 +187,8 @@
         gap: 35vh;
     }
     .card {
-        width: 90vw;
+        width: 70vw;
+        height: auto;
     }
 
     .card > .lower {
