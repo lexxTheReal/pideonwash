@@ -267,35 +267,29 @@ main h1 {
 }
 
 .bento-item {
-    background: var(--glass-white);
+    background: radial-gradient(circle at top right, var(--primary-purple), var(--bg-dark)) center / cover fixed no-repeat;
     border: 1px solid var(--glass-border);
     border-radius: var(--rad-lg);
     padding: 30px;
     overflow: hidden;
+    position: relative;
+    top: 0;
     transition: var(--transition);
     cursor: pointer;
     flex-direction: column;
     justify-content: flex-end;
-    opacity: 0;
+    opacity: 1;
     display: flex;
-    pointer-events: none;
-    transform: scale(0.9);
-}
-
-.bento-grid > *:not(.bento-main) {
-    display: none;
+    pointer-events: auto;
 }
 
 .bento-main {
-    grid-column: span 4; 
+    grid-column: span 2; 
     grid-row: span 2;
-    background: radial-gradient(circle at top right, var(--deep-purple), var(--bg-dark));
     position: relative;
     z-index: 3;
     opacity: 1;
     pointer-events: auto;
-    transform: scale(1);
-    margin-bottom: 100px;
     height: 100%;
 }
 .bento-side {
@@ -467,21 +461,16 @@ main h1 {
         grid-column: span 2;
     }
 
-    .bento-grid:hover .bento-item {
-        opacity: 1;
-        pointer-events: auto;
-        transform: scale(1);
-        display: flex !important;
-    }
-
-    .bento-grid:hover .bento-main {
-        grid-column: span 2;
-        display: flex !important;
+    /* Hover-Effekte für einzelne Items beibehalten, aber Grid-Hover-Zwang entfernt */
+    .bento-item:hover {
+        border-color: var(--neon-purple);
+        top: -5px;
     }
     .bento-item:hover {
         border-color: var(--neon-purple);
-        transform: translateY(-5px) scale(1);
+        top: -5px;
     }
+
 }
 @media (max-width: 768px) {
     nav#main-nav {
