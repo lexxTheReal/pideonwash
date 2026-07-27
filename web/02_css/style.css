@@ -77,6 +77,7 @@ html {
 .text-gradient {
     background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: clamp(3rem, 10vw, 8rem);
 }
@@ -408,6 +409,7 @@ main h1 {
     margin-bottom: 10px;
     background: linear-gradient(to bottom, #fff, var(--neon-purple));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
