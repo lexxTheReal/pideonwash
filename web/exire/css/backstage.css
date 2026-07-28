@@ -19,7 +19,7 @@
 
 .vault-item:hover {
     transform: scale(1.05);
-    border-color: var(--neon-pink);
+    border-color: var(--alt-light);
     z-index: 10;
 }
 

@@ -6,7 +6,16 @@
     --deep-purple: #1a004d;
     --neon-purple: #811DF1;
     --neon-pink: #FF56FF;
+
+
+    --alt-dark: #3A4B35;
+    --alt-light: #C2D3C1;
+    --alt-tert: #271615;
+
+
     --classified-red: #8B0000;
+
+
     --glass-white: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.15);
     --glass-glow: rgba(129, 221, 241, 0.2);
@@ -257,6 +266,16 @@ main h1 {
     overflow-wrap: normal;
 }
 
+
+.bento-content > .bento-main-h2 > .exire {
+    font-size: clamp(3rem, 10vw, 8rem);
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, var(--alt-light), var(--alt-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -268,7 +287,7 @@ main h1 {
 }
 
 .bento-item {
-    background: radial-gradient(circle at top right, var(--primary-purple), var(--bg-dark)) center / cover fixed no-repeat;
+    background: radial-gradient(circle at top right, var(--primary-purple), var(--bg-dark)) center / cover fixed no-repeat; /*DAS IS DER HINTERGRUND DER JETZT ENDLICH FUNKTINIERT ALSO JA NICHT ANGREIFEN*/
     border: 1px solid var(--glass-border);
     border-radius: var(--rad-lg);
     padding: 30px;
@@ -311,7 +330,7 @@ main h1 {
     margin-top: 20px;
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    border: 1px solid var(--neon-purple);
+    border: 1px solid var(--alt-dark);
     width: fit-content;
     padding: 5px 15px;
     border-radius: 20px;
@@ -319,7 +338,7 @@ main h1 {
     transition: var(--transition);
 }
 .bento-btn:hover {
-    background: var(--neon-purple);
+    background: var(--alt-dark);
     color: white;
 }
 
@@ -465,11 +484,7 @@ main h1 {
 
     /* Hover-Effekte für einzelne Items beibehalten, aber Grid-Hover-Zwang entfernt */
     .bento-item:hover {
-        border-color: var(--neon-purple);
-        top: -5px;
-    }
-    .bento-item:hover {
-        border-color: var(--neon-purple);
+        border-color: var(--alt-dark);
         top: -5px;
     }
 

@@ -15,7 +15,7 @@
 }
 
 .dossier-card:hover {
-    border-color: var(--neon-pink);
+    border-color: var(--alt-light);
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.08);
 }
@@ -23,7 +23,7 @@
 .dossier-img {
     width: 100%;
     height: 250px;
-    background: var(--deep-purple);
+    background: var(--alt-tert);
     display: flex;
     align-items: center;
     justify-content: center;
