@@ -201,6 +201,13 @@ footer strong:hover {
     color: var(--neon-pink);
 }
 
+footer > .casting-container {
+    color: white;
+}
+footer > .casting-container:hover {
+    cursor: pointer;
+}
+
 /* Responsive Navigation */
 .burger-menu {
     position: fixed;

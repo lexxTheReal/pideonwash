@@ -86,7 +86,7 @@
     transition: var(--transition);
     box-shadow: 0 0 10px 1px var(--bg-accent);
     font-family: var(--font-mono);
-    color: rgba(255, 255, 255, 0.5);
+    color: #ffffff80;
     font-size: 0.9rem;
 }
 
