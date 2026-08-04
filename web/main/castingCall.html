@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../02_css/style.css">
     <link rel="stylesheet" href="castingCall.css">
     <link rel="icon" href="../../assets/logo.png">
+
     <title>PIDEONWASH | Casting</title>
+
     <script src="../01_script/nav.js" defer></script>
+
     <!-- Formspree integration for email submissions -->
     <script src="https://formspree.io/js/formspree.js"></script>
 </head>
+
 <body>
     <div class="fixed-bg"></div>
+
     <div class="burger-menu" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
+
     <nav id="main-nav">
         <a href="../../index.html" onclick="toggleMenu()">Home</a>
         <a href="team.html" onclick="toggleMenu()">Team</a>
@@ -30,61 +39,269 @@
     <main>
         <div class="container glass-card">
             <h1>Contact us!</h1>
-            <form id="castingForm" action="https://formspree.io/f/myeggzvg" method="POST" enctype="multipart/form-data">
-                <input required type="text" name="name" id="name" placeholder="Max Musterman" title="Enter your name">
-                <input required min="15" max="25" type="number" name="age" id="age" placeholder="99" title="Enter your age">
-                <input required type="email" name="email" id="email" placeholder="max@musterman.com" title="Enter your E-Mail">
-                <input type="file" accept=".mp4" name="vidUpload" id="vidUpload" title="Upload a video of your application video">
+
+            <form
+                id="castingForm"
+                action="https://formspree.io/f/myeggzvg"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+                <input
+                    required
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Linus Finn Skola"
+                    title="Enter your name"
+                    autocomplete="off"
+                >
+
+                <input
+                    required
+                    min="15"
+                    max="25"
+                    type="number"
+                    name="age"
+                    id="age"
+                    placeholder="99"
+                    title="Enter your age"
+                    autocomplete="off"
+                >
+
+                <input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="max@musterman.com"
+                    title="Enter your E-Mail"
+                    autocomplete="off"
+                >
+
+                <div class="file-upload-wrapper">
+                    <input
+                        class="file-upload-input"
+                        type="file"
+                        accept=".mp4"
+                        name="vidUpload"
+                        id="vidUpload"
+                        title="Upload a video of your application video"
+                    >
+
+                    <label class="file-upload-label" for="vidUpload">
+                        Choose video
+                    </label>
+
+                    <span class="file-name" id="fileName">
+                        No file selected
+                    </span>
+                </div>
+
                 <input type="submit" value="Send">
             </form>
         </div>
     </main>
 
-    <div id="goHome" title="return to Homepage" onclick="window.location.href='../../index.html'">
+    <div
+        id="goHome"
+        title="return to Homepage"
+        onclick="window.location.href='../../index.html'"
+    >
         <img src="../../assets/logo.png" alt="logo">
     </div>
 
     <footer>
-            <span>production by <strong onclick="window.location.href='../../index.html'">PIDEONWASH</strong></span>
-            <div class="footer-socials">
-                <a href="https://discord.com/invite/SKhXXkaKRu" title="Discord"><img src="../../assets/Discord-Symbol-White.svg" alt="Discord"></a>
-                <a href="https://www.instagram.com/pideonwash" title="Instagram"><img src="../../assets/Instagram_Glyph_White.svg" alt="Instagram"></a>
-                <a href="https://www.youtube.com/channel/UCzaymovCDcb4Y8rIS-CwUwg" title="YouTube"><img src="../../assets/yt_icon_white_digital.png" alt="YouTube"></a>
-            </div>
-            <span class="footer-copyright">&copy; 2026 All Rights Reserved</span>
+        <span>
+            production by
+            <strong onclick="window.location.href='../../index.html'">
+                PIDEONWASH
+            </strong>
+        </span>
+
+        <div class="footer-socials">
+            <a
+                href="https://discord.com/invite/SKhXXkaKRu"
+                title="Discord"
+            >
+                <img
+                    src="../../assets/Discord-Symbol-White.svg"
+                    alt="Discord"
+                >
+            </a>
+
+            <a
+                href="https://www.instagram.com/pideonwash"
+                title="Instagram"
+            >
+                <img
+                    src="../../assets/Instagram_Glyph_White.svg"
+                    alt="Instagram"
+                >
+            </a>
+
+            <a
+                href="https://www.youtube.com/channel/UCzaymovCDcb4Y8rIS-CwUwg"
+                title="YouTube"
+            >
+                <img
+                    src="../../assets/yt_icon_white_digital.png"
+                    alt="YouTube"
+                >
+            </a>
+        </div>
+
+        <span class="footer-copyright">
+            &copy; 2026 All Rights Reserved
+        </span>
     </footer>
 
     <!-- Form validation and user feedback -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('castingForm');
-            
-            form.addEventListener('submit', function(e) {
-                const ageInput = document.getElementById('age');
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("castingForm");
+            const ageInput = document.getElementById("age");
+            const fileInput = document.getElementById("vidUpload");
+            const fileName = document.getElementById("fileName");
+
+            fileInput.addEventListener("change", function () {
+                if (fileInput.files.length > 0) {
+                    fileName.textContent = fileInput.files[0].name;
+                } else {
+                    fileName.textContent = "No file selected";
+                }
+            });
+
+            form.addEventListener("submit", function (event) {
                 const age = parseInt(ageInput.value);
-                
-                // Custom age validation (Formspree will also validate)
+
                 if (age < 15 || age > 25) {
-                    e.preventDefault();
-                    alert('Age must be between 15 and 25 years old for this casting call');
+                    event.preventDefault();
+
+                    alert(
+                        "Age must be between 15 and 25 years old for this casting call"
+                    );
+
                     ageInput.focus();
-                    return false;
+                    return;
                 }
-                
-                // Show submission feedback
-                const submitBtn = form.querySelector('input[type="submit"]');
-                submitBtn.value = 'Submitting...';
-                submitBtn.disabled = true;
+
+                const submitButton = form.querySelector(
+                    'input[type="submit"]'
+                );
+
+                submitButton.value = "Submitting...";
+                submitButton.disabled = true;
             });
-            
-            // Reset button state on page load
-            window.addEventListener('beforeunload', function() {
-                const submitBtn = form.querySelector('input[type="submit"]');
-                if (submitBtn.disabled) {
-                    submitBtn.value = 'Send';
-                    submitBtn.disabled = false;
+
+            window.addEventListener("beforeunload", function () {
+                const submitButton = form.querySelector(
+                    'input[type="submit"]'
+                );
+
+                if (submitButton.disabled) {
+                    submitButton.value = "Send";
+                    submitButton.disabled = false;
                 }
             });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("castingForm");
+            const ageInput = document.getElementById("age");
+            const fileInput = document.getElementById("vidUpload");
+            const fileWrapper = document.querySelector(".file-upload-wrapper");
+            const fileName = document.getElementById("fileName");
+            const submitButton = form.querySelector('input[type="submit"]');
+
+            const inputs = form.querySelectorAll(
+                'input:not([type="submit"])'
+            );
+
+            function updateSubmitButton() {
+                submitButton.disabled = !form.checkValidity();
+            }
+
+            function updateFieldState(input) {
+                input.classList.add("touched");
+
+                if (input.checkValidity()) {
+                    input.classList.remove("invalid");
+                    input.classList.add("valid");
+                } else {
+                    input.classList.remove("valid");
+                    input.classList.add("invalid");
+                }
+            }
+
+            inputs.forEach(function (input) {
+                // Erst beim Verlassen des Feldes wird der visuelle Hinweis angezeigt
+                input.addEventListener("blur", function () {
+                    updateFieldState(input);
+
+                    if (input === fileInput) {
+                        fileWrapper.classList.add("touched");
+
+                        if (input.checkValidity()) {
+                            fileWrapper.classList.remove("invalid");
+                            fileWrapper.classList.add("valid");
+                        } else {
+                            fileWrapper.classList.remove("valid");
+                            fileWrapper.classList.add("invalid");
+                        }
+                    }
+                });
+
+                // Nach der ersten Prüfung wird der Status direkt aktualisiert
+                input.addEventListener("input", function () {
+                    if (input.classList.contains("touched")) {
+                        updateFieldState(input);
+                    }
+
+                    updateSubmitButton();
+                });
+
+                input.addEventListener("change", function () {
+                    if (input === fileInput) {
+                        fileName.textContent = input.files.length > 0
+                            ? input.files[0].name
+                            : "No file selected";
+
+                        if (fileWrapper.classList.contains("touched")) {
+                            if (input.checkValidity()) {
+                                fileWrapper.classList.remove("invalid");
+                                fileWrapper.classList.add("valid");
+                            } else {
+                                fileWrapper.classList.remove("valid");
+                                fileWrapper.classList.add("invalid");
+                            }
+                        }
+                    }
+
+                    updateSubmitButton();
+                });
+            });
+
+            form.addEventListener("submit", function (event) {
+                const age = parseInt(ageInput.value);
+
+                if (age < 15 || age > 25) {
+                    event.preventDefault();
+
+                    alert(
+                        "Age must be between 15 and 25 years old for this casting call"
+                    );
+
+                    ageInput.focus();
+                    return;
+                }
+
+                submitButton.value = "Submitting...";
+                submitButton.disabled = true;
+            });
+
+            // Button am Anfang deaktivieren, aber noch keine roten/grünen Hinweise anzeigen
+            updateSubmitButton();
         });
     </script>
 </body>
