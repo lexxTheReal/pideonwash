@@ -90,6 +90,10 @@ input:valid {
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
 }
 
 .file-upload-label:hover {

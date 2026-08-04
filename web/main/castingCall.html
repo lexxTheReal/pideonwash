@@ -161,55 +161,6 @@
             const form = document.getElementById("castingForm");
             const ageInput = document.getElementById("age");
             const fileInput = document.getElementById("vidUpload");
-            const fileName = document.getElementById("fileName");
-
-            fileInput.addEventListener("change", function () {
-                if (fileInput.files.length > 0) {
-                    fileName.textContent = fileInput.files[0].name;
-                } else {
-                    fileName.textContent = "No file selected";
-                }
-            });
-
-            form.addEventListener("submit", function (event) {
-                const age = parseInt(ageInput.value);
-
-                if (age < 15 || age > 25) {
-                    event.preventDefault();
-
-                    alert(
-                        "Age must be between 15 and 25 years old for this casting call"
-                    );
-
-                    ageInput.focus();
-                    return;
-                }
-
-                const submitButton = form.querySelector(
-                    'input[type="submit"]'
-                );
-
-                submitButton.value = "Submitting...";
-                submitButton.disabled = true;
-            });
-
-            window.addEventListener("beforeunload", function () {
-                const submitButton = form.querySelector(
-                    'input[type="submit"]'
-                );
-
-                if (submitButton.disabled) {
-                    submitButton.value = "Send";
-                    submitButton.disabled = false;
-                }
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("castingForm");
-            const ageInput = document.getElementById("age");
-            const fileInput = document.getElementById("vidUpload");
             const fileWrapper = document.querySelector(".file-upload-wrapper");
             const fileName = document.getElementById("fileName");
             const submitButton = form.querySelector('input[type="submit"]');
