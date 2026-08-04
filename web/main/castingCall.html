@@ -56,36 +56,36 @@
 
     <!-- Form validation and user feedback -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('castingForm');
-        
-        form.addEventListener('submit', function(e) {
-            const ageInput = document.getElementById('age');
-            const age = parseInt(ageInput.value);
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('castingForm');
             
-            // Custom age validation (Formspree will also validate)
-            if (age < 15 || age > 25) {
-                e.preventDefault();
-                alert('Age must be between 15 and 25 years old for this casting call');
-                ageInput.focus();
-                return false;
-            }
+            form.addEventListener('submit', function(e) {
+                const ageInput = document.getElementById('age');
+                const age = parseInt(ageInput.value);
+                
+                // Custom age validation (Formspree will also validate)
+                if (age < 15 || age > 25) {
+                    e.preventDefault();
+                    alert('Age must be between 15 and 25 years old for this casting call');
+                    ageInput.focus();
+                    return false;
+                }
+                
+                // Show submission feedback
+                const submitBtn = form.querySelector('input[type="submit"]');
+                submitBtn.value = 'Submitting...';
+                submitBtn.disabled = true;
+            });
             
-            // Show submission feedback
-            const submitBtn = form.querySelector('input[type="submit"]');
-            submitBtn.value = 'Submitting...';
-            submitBtn.disabled = true;
+            // Reset button state on page load
+            window.addEventListener('beforeunload', function() {
+                const submitBtn = form.querySelector('input[type="submit"]');
+                if (submitBtn.disabled) {
+                    submitBtn.value = 'Send';
+                    submitBtn.disabled = false;
+                }
+            });
         });
-        
-        // Reset button state on page load
-        window.addEventListener('beforeunload', function() {
-            const submitBtn = form.querySelector('input[type="submit"]');
-            if (submitBtn.disabled) {
-                submitBtn.value = 'Send';
-                submitBtn.disabled = false;
-            }
-        });
-    });
     </script>
 </body>
 </html>
