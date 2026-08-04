@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../02_css/style.css">
-    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="castingCall.css">
     <link rel="icon" href="../../assets/logo.png">
     <title>PIDEONWASH | Casting</title>
     <script src="../01_script/nav.js" defer></script>
+    <!-- Formspree integration for email submissions -->
+    <script src="https://formspree.io/js/formspree.js"></script>
 </head>
 <body>
     <div class="fixed-bg"></div>
@@ -26,7 +28,16 @@
     </nav>
 
     <main>
-        
+        <div class="container glass-card">
+            <h1>Contact us!</h1>
+            <form id="castingForm" action="https://formspree.io/f/myeggzvg" method="POST" enctype="multipart/form-data">
+                <input required type="text" name="name" id="name" placeholder="Max Musterman" title="Enter your name">
+                <input required min="15" max="25" type="number" name="age" id="age" placeholder="99" title="Enter your age">
+                <input required type="email" name="email" id="email" placeholder="max@musterman.com" title="Enter your E-Mail">
+                <input type="file" accept=".mp4" name="vidUpload" id="vidUpload" title="Upload a video of your application video">
+                <input type="submit" value="Send">
+            </form>
+        </div>
     </main>
 
     <div id="goHome" title="return to Homepage" onclick="window.location.href='../../index.html'">
@@ -42,5 +53,39 @@
             </div>
             <span class="footer-copyright">&copy; 2026 All Rights Reserved</span>
     </footer>
+
+    <!-- Form validation and user feedback -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('castingForm');
+        
+        form.addEventListener('submit', function(e) {
+            const ageInput = document.getElementById('age');
+            const age = parseInt(ageInput.value);
+            
+            // Custom age validation (Formspree will also validate)
+            if (age < 15 || age > 25) {
+                e.preventDefault();
+                alert('Age must be between 15 and 25 years old for this casting call');
+                ageInput.focus();
+                return false;
+            }
+            
+            // Show submission feedback
+            const submitBtn = form.querySelector('input[type="submit"]');
+            submitBtn.value = 'Submitting...';
+            submitBtn.disabled = true;
+        });
+        
+        // Reset button state on page load
+        window.addEventListener('beforeunload', function() {
+            const submitBtn = form.querySelector('input[type="submit"]');
+            if (submitBtn.disabled) {
+                submitBtn.value = 'Send';
+                submitBtn.disabled = false;
+            }
+        });
+    });
+    </script>
 </body>
 </html>

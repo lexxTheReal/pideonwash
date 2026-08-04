@@ -10,3 +10,13 @@ function toggleMenu() {
         burger.classList.add('active');
     }
 }
+
+const emailInput = document.getElementById('email');
+
+emailInput.addEventListener("input", () => {
+    if (emailInput.checkValidity()) {
+        console.log("Format ist gültig");
+    } else {
+        console.log("Format ist ungültig");
+    }
+});
