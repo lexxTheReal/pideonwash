@@ -35,6 +35,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 /* Custom Scrollbar */
@@ -81,6 +82,27 @@ html {
     background: radial-gradient(circle at center, var(--primary-purple), var(--bg-dark));
     z-index: -1;
     pointer-events: none;
+}
+
+.castingPromo {
+    z-index: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(10deg);
+    -webkit-transform: translate(-50%, -50%) rotateZ(10deg);
+    -moz-transform: translate(-50%, -50%) rotateZ(10deg);
+    -ms-transform: translate(-50%, -50%) rotateZ(10deg);
+    -o-transform: translate(-50%, -50%) rotateZ(10deg);
+    letter-spacing: 0.266rem;
+    font-family: var(--font-body);
+    font-weight: bold;
+    color: #dbd0ff3d;
+    font-size: 2rem;
+    cursor: grab;
+}
+.castingPromo:active {
+    cursor: grabbing;
 }
 
 .text-gradient {
