@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shimmer Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #05000a;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .castingPromo {
+            z-index: 0;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateZ(10deg);
+            -webkit-transform: translate(-50%, -50%) rotateZ(10deg);
+            -moz-transform: translate(-50%, -50%) rotateZ(10deg);
+            -ms-transform: translate(-50%, -50%) rotateZ(10deg);
+            -o-transform: translate(-50%, -50%) rotateZ(10deg);
+            letter-spacing: 0.266rem;
+            font-family: 'Archivo', sans-serif;
+            font-weight: bold;
+            color: #dbd0ff3d;
+            font-size: 2rem;
+            cursor: grab;
+            position: relative;
+            display: inline-block;
+        }
+        .castingPromo:active {
+            cursor: grabbing;
+        }
+        
+        .castingPromo:before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: subtle-shimmer 2s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes subtle-shimmer {
+            0%, 100% {
+                background-position: -200% 0;
+            }
+            50% {
+                color: #e0d4ff4d;
+                text-shadow: 0 0 25px rgba(129, 221, 241, 0.4),
+                             0 0 40px rgba(129, 221, 241, 0.3),
+                             0 0 60px rgba(129, 221, 241, 0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="castingPromo" tabindex="0" onclick="window.location.href='#'" data-text="Looking for you">Looking for you</p>
+</body>
+</html>

@@ -97,14 +97,27 @@ html {
     letter-spacing: 0.266rem;
     font-family: var(--font-body);
     font-weight: bold;
-    color: #dbd0ff3d;
     font-size: 2rem;
     cursor: grab;
+    background: linear-gradient(135deg, #ffffff00, #dbd0ffa1, #ffffff00);
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: shimmer 15s linear infinite;
+    -webkit-animation: shimmer 15s linear infinite;
 }
 .castingPromo:active {
     cursor: grabbing;
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 .text-gradient {
     background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
     -webkit-background-clip: text;
