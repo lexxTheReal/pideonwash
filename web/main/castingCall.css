@@ -56,7 +56,7 @@ input {
 }
 
 input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.4);
 }
 
 input:hover {
@@ -137,6 +137,7 @@ input[type=submit] {
 /* Felder werden erst nach dem Verlassen visuell markiert */
 input.touched:invalid {
     outline: #e57373 2px solid;
+    box-shadow: 0 0 5px 1px #e57373;
 }
 
 input.touched:valid {
