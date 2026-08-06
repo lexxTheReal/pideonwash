@@ -105,6 +105,8 @@ html {
     background-size: 200% 100%;
     animation: shimmer 15s linear infinite;
     -webkit-animation: shimmer 15s linear infinite;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .castingPromo:active {
     cursor: grabbing;
